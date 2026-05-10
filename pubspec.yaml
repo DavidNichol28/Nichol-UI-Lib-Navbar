@@ -1,7 +1,7 @@
 name: nichol_ui_lib_navbar
 description: "Custom navbar"
 version: 0.0.1
-homepage:
+homepage: https://github.com/DavidNichol28/Nichol-UI-Lib-Navbar
 
 environment:
   sdk: ^3.9.2
