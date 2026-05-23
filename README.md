@@ -1,39 +1,31 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# Flutter Custom Navigation Bar
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/tools/pub/writing-package-pages).
+A flexible, multi-layer navigation bar system for Flutter that supports stacked navigation bars, dynamic action menus, and fully customizable styling.
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/to/develop-packages).
--->
+This package provides two main widgets:
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+- `NavBar` — a single configurable AppBar-style navigation component
+- `CustomNavBar` — a stacked/multi-layer navigation system built from multiple NavBars
 
-## Features
+---
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+# Features
 
-## Getting started
+- Fully customizable text actions
+- Popup menu for secondary actions
+- Multi-layer stacked navigation bars
+- Independent styling for primary and secondary layers
+- Built-in back navigation callback
+- Simple declarative API
+- No external dependencies beyond Flutter SDK
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+---
 
-## Usage
+# Installation
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+Add this package locally in your `pubspec.yaml`:
 
-```dart
-const like = 'sample';
-```
-
-## Additional information
-
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+```yaml
+dependencies:
+  custom_navbar:
+    path: ../packages/custom_navbar
