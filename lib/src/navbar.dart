@@ -32,10 +32,7 @@ class NavBar extends StatelessWidget {
             value.endsWith('.webp'));
   }
 
-  Widget _buildNavItem(
-    String value,
-    TextStyle style,
-  ) {
+  Widget _buildNavItem(String value, TextStyle style) {
     // Check if its an icon - not a string
     if (_looksLikeAsset(value)) {
       return Image.asset(
@@ -43,19 +40,13 @@ class NavBar extends StatelessWidget {
         height: 32,
         errorBuilder: (_, __, ___) {
           // Return as string if asset not found
-          return Text(
-            value,
-            style: style,
-          );
+          return Text(value, style: style);
         },
       );
     }
 
     // Returns Text if _looksLikeAsset == false
-    return Text(
-      value,
-      style: style,
-    );
+    return Text(value, style: style);
   }
 
   @override
@@ -64,11 +55,7 @@ class NavBar extends StatelessWidget {
     List<Widget> actions = [
       // Button for dropdown
       PopupMenuButton<int>(
-        icon: const Icon(
-          Icons.menu,
-          color: Colors.white,
-          size: 24.0,
-        ),
+        icon: const Icon(Icons.menu, color: Colors.white, size: 24.0),
         color: backgroundColor,
         itemBuilder: (context) => List.generate(
           actionWidgetStrings.length - 1,
@@ -92,10 +79,7 @@ class NavBar extends StatelessWidget {
         onTap: () {
           actionWidgetCallbacks[0]();
         },
-        child: _buildNavItem(
-          actionWidgetStrings[0],
-          bigTextStyle,
-        ),
+        child: _buildNavItem(actionWidgetStrings[0], bigTextStyle),
       ),
       elevation: 2,
       backgroundColor: backgroundColor,
@@ -104,10 +88,7 @@ class NavBar extends StatelessWidget {
       leading: Builder(
         builder: (BuildContext context) {
           return IconButton(
-            icon: const Icon(
-              Icons.arrow_back,
-              color: Colors.white,
-            ),
+            icon: const Icon(Icons.arrow_back, color: Colors.white),
             onPressed: () {
               goBack();
             },
@@ -117,4 +98,3 @@ class NavBar extends StatelessWidget {
     );
   }
 }
-

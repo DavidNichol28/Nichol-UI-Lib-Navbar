@@ -16,8 +16,8 @@ class CustomNavBar extends StatelessWidget {
   final TextStyle secondarySmallTextStyle;
   final Color backgroundColor;
   final VoidCallback goBack;
-  
- CustomNavBar({
+
+  CustomNavBar({
     super.key,
     List<List<String>>? actionWidgetStringsLists,
     List<List<VoidCallback>>? actionWidgetCallbacksLists,
@@ -27,11 +27,19 @@ class CustomNavBar extends StatelessWidget {
     required this.secondarySmallTextStyle,
     required this.backgroundColor,
     required this.goBack,
-  })  : actionWidgetStringsLists = actionWidgetStringsLists ?? [["Click me, I'm silly!", "Press me for wisdom!"]],
-        actionWidgetCallbacksLists = actionWidgetCallbacksLists ?? [[
-          () => debugPrint("Clicked: Click me, I'm silly!"),
-          () => debugPrint("Clicked: Press me for wisdom!"),
-        ]];
+  }) : actionWidgetStringsLists =
+           actionWidgetStringsLists ??
+           [
+             ["Click me, I'm silly!", "Press me for wisdom!"],
+           ],
+       actionWidgetCallbacksLists =
+           actionWidgetCallbacksLists ??
+           [
+             [
+               () => debugPrint("Clicked: Click me, I'm silly!"),
+               () => debugPrint("Clicked: Press me for wisdom!"),
+             ],
+           ];
 
   @override
   Widget build(BuildContext context) {
@@ -41,29 +49,26 @@ class CustomNavBar extends StatelessWidget {
     TextStyle bigTextStyle = primaryBigTextStyle;
     TextStyle smallTextStyle = primarySmallTextStyle;
     for (int i = 0; i < actionWidgetStringsLists!.length; i++) {
-       navbarStack.add(
-         SizedBox(
-           height: currentHeight,
-           child: NavBar(
-             goBack: goBack,
-             actionWidgetStrings:actionWidgetStringsLists![i],
-             actionWidgetCallbacks: actionWidgetCallbacksLists![i],
-             bigTextStyle: bigTextStyle,
-             smallTextStyle: smallTextStyle,
-             backgroundColor: backgroundColor,
-           )
-         )
-       );
-       if (i == 0) {
-         bigTextStyle = secondaryBigTextStyle;
-         smallTextStyle = secondarySmallTextStyle;
-         currentHeight = 40.0;
-       }
+      navbarStack.add(
+        SizedBox(
+          height: currentHeight,
+          child: NavBar(
+            goBack: goBack,
+            actionWidgetStrings: actionWidgetStringsLists![i],
+            actionWidgetCallbacks: actionWidgetCallbacksLists![i],
+            bigTextStyle: bigTextStyle,
+            smallTextStyle: smallTextStyle,
+            backgroundColor: backgroundColor,
+          ),
+        ),
+      );
+      if (i == 0) {
+        bigTextStyle = secondaryBigTextStyle;
+        smallTextStyle = secondarySmallTextStyle;
+        currentHeight = 40.0;
+      }
     }
 
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: navbarStack
-    );
+    return Column(mainAxisSize: MainAxisSize.min, children: navbarStack);
   }
 }
