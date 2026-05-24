@@ -1,4 +1,5 @@
 # Flutter Custom Navigation Bar
+![pub package](https://img.shields.io/pub/v/nichol_ui_lib_navbar.svg)
 
 A flexible, multi-layer navigation bar system for Flutter that supports stacked navigation bars, dynamic action menus, and fully customizable styling.
 
